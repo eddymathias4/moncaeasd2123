@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Mooninc</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anton">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Blinker:400,800">
+    <link rel="stylesheet" href="assets/css/styles.min.css">
+</head>
+
+<body style="background-color: #34313f;">
+    <!-- Start: Social Icons -->
+    <div class="social-icons" style="background-color: rgba(40,38,51,0.63);height: 130px;padding-top: 25px;margin-bottom: 75px;">
+        <div class="row">
+            <div class="col-xl-4">
+                <h1 class="text-center" style="color: rgb(255,255,255);font-family: Blinker, sans-serif;"><strong>Moon Inc</strong></h1>
+                <p class="text-center" style="color: rgb(220,53,69);"><strong>Cookies For Everyone</strong></p>
+            </div>
+            <div class="col-xl-4">
+                <h5 class="text-center" style="color: rgb(255,255,255);font-family: Blinker, sans-serif;"><strong>How To Play</strong></h5>
+                <h6 style="color: rgb(220,53,69);"><strong>A Quick Guide How To Play</strong><br></h6>
+            </div>
+            <div class="col-xl-3 offset-xl-1">
+                <h5 class="text-left" style="color: rgb(255,255,255);font-family: Blinker, sans-serif;margin-top: -15px;"><strong>Back To Frag &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</strong><img src="assets/img/download.png" style="width: 65px;"></h5>
+                <h6 class="text-left" style="color: rgb(220,53,69);margin-top: -25px;"><strong>Leaveing So Soon?</strong><br></h6>
+            </div>
+        </div>
+    </div>
+    <!-- End: Social Icons -->
+    <div class="row" style="background-color: #34313f;margin-top: -60px;">
+        <div class="col-xl-3" style="background-color: #34313f;width: 100%;">
+            <div class="card text-center" style="background-color: #34313f;width: 100%;margin-top: 25px;">
+                <div class="card-body" style="background-color: #282633;margin-top: 10p;padding-bottom: 80px;width: 100%;">
+                    <h2 class="text-center" style="color: rgb(255,255,255);font-family: Blinker, sans-serif;margin-bottom: 25px;"><strong>Basic info</strong></h2>
+                    <h6 class="text-danger card-title" style="padding-right: 80px;">Your Address&nbsp;<span class="text-muted" id="your_addy">NaN</span></h6>
+                    <h6 class="text-danger card-title" style="margin-bottom: 50px;padding-right: 45px;">Your Balance <span class="text-muted" id="FragBalance">NaN</span>&nbsp;Frag</h6>
+                    <h6 class="text-danger card-title" style="padding-right: 50px;">Contract Pot <span class="text-muted" id="contract_pot">NaN</span>&nbsp;Frag</h6>
+                    <h6 class="text-danger card-title" style="padding-right: 60px;margin-bottom: -15px;">Cookie Pot <span class="text-muted" id="cookiePot">NaN</span>&nbsp;Frag</h6>
+                    <p class="text-center"><img src="assets/img/cookie-gif-2.gif" style="width: 300px;margin-bottom: -35px;"></p>
+                    <h6 class="text-danger card-title">Your Production:&nbsp;<span class="text-muted" id="your_prod">NaN</span>&nbsp;Cookies/s</h6>
+                    <h6 class="text-danger card-title" style="padding-right: 55px;">Your Shares:&nbsp;<span class="text-muted" id="your_shares">NaN</span>&nbsp;Shares</h6>
+                    <h6 class="text-danger card-title" style="margin-bottom: 50px;padding-right: 35px;">Your Cookies:&nbsp;<span class="text-muted" id="your_cookies">NaN</span>&nbsp;Cookies</h6>
+                    <p class="text-center" style="margin-bottom: 35px;"><button class="btn btn-primary moreinfobox" type="button">More Info</button></p>
+                    <p class="text-center" style="margin-bottom: 10px;"><button class="btn btn-primary sellbox" type="button" onclick="sellcookies()">Sell Cookies</button></p>
+                    <p class="text-center text-danger" style="margin-bottom: 35px;"><strong>Sell For&nbsp;</strong><span class="text-muted" id="cookies_value">NaN</span><strong>&nbsp;Frag</strong><br></p>
+                    <p class="text-center" style="margin-bottom: 10px;"><button class="btn btn-primary withdrawbox" type="button" onclick="withdraw()">Withdraw</button></p>
+                    <p class="text-center text-danger" style="margin-bottom: 100px;"><strong>Balance </strong><span class="text-muted" id="WithdrawbleFrag">NaN</span><strong>&nbsp;Frag</strong><br></p>
+                    <p class="text-center text-muted"><strong>referral link will give you 5% on any transaction at no cost</strong><br></p>
+                    <p class="text-center" style="margin-bottom: 20px;"><button class="btn btn-primary inputbox" type="button" onclick="getReff()">Copy Ref</button></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-8">
+            <div class="row" style="background-color: #34313f;">
+                <div class="col-xl-12 offset-xl-1" style="background-color: #34313f;padding-left: 20px;height: 1250px;width: 100%;">
+                    <div class="card" style="background-color: #282633;margin-top: 30px;">
+                        <div class="card-body" style="padding-top: 5px;padding-bottom: 5px;">
+                            <div class="row">
+                                <div class="col">
+                                    <p class="text-center text-danger">Price:&nbsp;<span class="text-muted" id="BuyPriceUnit1">NaN</span> Frag</p>
+                                    <p class="text-center"><input type="text" id="BuyUnit1" class="text-center inputbox buyUnitField" placeholder="0 Unit" style="color: rgb(255,255,255);" name="BuyUnit1"></p>
+                                    <h6 class="text-center text-white" style="margin-top: -10px;">You will get&nbsp;<span id="BuyUnit1Recive">NaN</span> Units</h6>
+                                    <p class="text-center" style="padding-top: 25px;"><button class="btn btn-primary buybox" id="Buy1" type="button">Buy Units</button></p>
+                                    <p class="text-center text-danger">Buy Fee:&nbsp;<span class="text-muted" id="buyFee1">NaN+%</span></p>
+                                </div>
+                                <div class="col">
+                                    <p class="text-center"><img src="assets/img/internspace.png" style="width: 200px;"></p>
+                                </div>
+                                <div class="col">
+                                    <p class="text-center text-danger">Your Units:&nbsp;<span id="YourUnits1" style="color: rgb(95,116,125)">0</span> Units</p>
+                                    <p class="text-center"><input type="text" id="SellUnit1" class="text-center inputbox sellUnitField" placeholder="0 Unit" style="color: rgb(255,255,255);" name="SellUnit1"></p>
+                                    <h6 class="text-center text-white" style="margin-top: -10px;">You will get&nbsp;<span id="SellFragRecive1">NaN</span> Frag</h6>
+                                    <p class="text-center" style="padding-top: 25px;"><button class="btn btn-primary sellbox" id="Sell1" type="button">Sell Units</button></p>
+                                    <p class="text-center text-danger">Sell Fee:&nbsp;<span class="text-muted" id="sellFee1">NaN+%</span></p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <p class="text-center text-danger">Production:&nbsp;<span class="text-muted" id="ProdUnit1top">NaN</span> Cookies/s</p>
+                                </div>
+                                <div class="col-xl-4 text-center">
+                                    <h5 class="text-danger" id="isLocked1">Locked</h5>
+                                </div>
+                                <div class="col">
+                                    <p class="text-center text-danger">Shares:&nbsp;<span class="text-muted" id="YourShare1">NaN</span> Shares</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" style="background-color: #282633;margin-top: 30px;">
+                        <div class="card-body" style="padding-top: 5px;padding-bottom: 5px;">
+                            <div class="row">
+                                <div class="col">
+                                    <p class="text-center text-danger">Price:&nbsp;<span class="text-muted" id="BuyPriceUnit2">NaN</span> Frag</p>
+                                    <p class="text-center"><input type="text" id="BuyUnit2" class="text-center inputbox buyUnitField" placeholder="0 Unit" style="color: rgb(255,255,255);" name="BuyUnit2"></p>
+                                    <h6 class="text-center text-white" style="margin-top: -10px;">You will get&nbsp;<span id="BuyUnit2Recive">NaN</span> Units</h6>
+                                    <p class="text-center" style="padding-top: 25px;"><button class="btn btn-primary buybox" id="Buy2" type="button">Buy Units</button></p>
+                                    <p class="text-center text-danger">Buy Fee:&nbsp;<span class="text-muted" id="buyFee2">NaN+%</span></p>
+                                </div>
+                                <div class="col">
+                                    <p class="text-center"><img src="assets/img/spacehamster.png" style="width: 200px;"></p>
+                                </div>
+                                <div class="col">
+                                    <p class="text-center text-danger">Your Units:&nbsp;<span id="YourUnits2" style="color: rgb(95,116,125)">0</span> Units</p>
+                                    <p class="text-center"><input type="text" id="SellUnit2" class="text-center inputbox sellUnitField" placeholder="0 Unit" style="color: rgb(255,255,255);" name="SellUnit2"></p>
+                                    <h6 class="text-center text-white" style="margin-top: -10px;">You will get&nbsp;<span id="SellFragRecive2">NaN</span> Frag</h6>
+                                    <p class="text-center" style="padding-top: 25px;"><button class="btn btn-primary sellbox" id="Sell2" type="button">Sell Units</button></p>
+                                    <p class="text-center text-danger">Sell Fee:&nbsp;<span class="text-muted" id="sellFee2">NaN+%</span></p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <p class="text-center text-danger">Production:&nbsp;<span class="text-muted" id="ProdUnit2top">NaN</span> Cookies/s</p>
+                                </div>
+                                <div class="col-xl-4 text-center">
+                                    <h5 class="text-danger" id="isLocked2">Locked</h5>
+                                </div>
+                                <div class="col">
+                                    <p class="text-center text-danger">Shares:&nbsp;<span class="text-muted" id="YourShare2">NaN</span> Shares</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" style="background-color: #282633;margin-top: 30px;">
+                        <div class="card-body" style="padding-top: 5px;padding-bottom: 5px;">
+                            <div class="row">
+                                <div class="col">
+                                    <p class="text-center text-danger">Price:&nbsp;<span class="text-muted" id="BuyPriceUnit3">NaN</span> Frag</p>
+                                    <p class="text-center"><input type="text" id="BuyUnit3" class="text-center inputbox buyUnitField" placeholder="0 Unit" style="color: rgb(255,255,255);" name="BuyUnit3"></p>
+                                    <h6 class="text-center text-white" style="margin-top: -10px;">You will get&nbsp;<span id="BuyUnit3Recive">NaN</span> Units</h6>
+                                    <p class="text-center" style="padding-top: 25px;"><button class="btn btn-primary buybox" id="Buy3" type="button">Buy Units</button></p>
+                                    <p class="text-center text-danger">Buy Fee:&nbsp;<span class="text-muted" id="buyFee3">NaN+%</span></p>
+                                </div>
+                                <div class="col">
+                                    <p class="text-center"><img src="assets/img/spacehape.png" style="width: 200px;"></p>
+                                </div>
+                                <div class="col">
+                                    <p class="text-center text-danger">Your Units:&nbsp;<span id="YourUnits3" style="color: rgb(95,116,125)">0</span> Units</p>
+                                    <p class="text-center"><input type="text" id="SellUnit3" class="text-center inputbox sellUnitField" placeholder="0 Unit" style="color: rgb(255,255,255);" name="SellUnit3"></p>
+                                    <h6 class="text-center text-white" style="margin-top: -10px;">You will get&nbsp;<span id="SellFragRecive3">NaN</span> Frag</h6>
+                                    <p class="text-center" style="padding-top: 25px;"><button class="btn btn-primary sellbox" id="Sell3" type="button">Sell Units</button></p>
+                                    <p class="text-center text-danger">Sell Fee:&nbsp;<span class="text-muted" id="sellFee3">NaN+%</span></p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <p class="text-center text-danger">Production:&nbsp;<span class="text-muted" id="ProdUnit3top">NaN</span> Cookies/s</p>
+                                </div>
+                                <div class="col-xl-4 text-center">
+                                    <h5 class="text-danger" id="isLocked3">Locked</h5>
+                                </div>
+                                <div class="col">
+                                    <p class="text-center text-danger">Shares:&nbsp;<span class="text-muted" id="YourShare3">NaN</span> Shares</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" style="background-color: #282633;margin-top: 30px;">
+                        <div class="card-body" style="padding-top: 5px;padding-bottom: 5px;">
+                            <div class="row">
+                                <div class="col">
+                                    <p class="text-center text-danger">Price:&nbsp;<span class="text-muted" id="BuyPriceUnit4">NaN</span> Frag</p>
+                                    <p class="text-center"><input type="text" id="BuyUnit4" class="text-center inputbox buyUnitField" placeholder="0 Frag" style="color: rgb(255,255,255);" name="BuyUnit4"></p>
+                                    <h6 class="text-center text-white" style="margin-top: -10px;">You will get&nbsp;<span id="BuyUnit4Recive">NaN</span> Units</h6>
+                                    <p class="text-center" style="padding-top: 25px;"><button class="btn btn-primary buybox" id="Buy4" type="button">Buy Units</button></p>
+                                    <p class="text-center text-danger">Buy Fee:&nbsp;<span class="text-muted" id="buyFee4">NaN+%</span></p>
+                                </div>
+                                <div class="col">
+                                    <p class="text-center"><img src="assets/img/prophet.png" style="width: 200px;"></p>
+                                </div>
+                                <div class="col">
+                                    <p class="text-center text-danger">Your Units:&nbsp;<span id="YourUnits4" style="color: rgb(95,116,125)">0</span> Units</p>
+                                    <p class="text-center"><input type="text" id="SellUnit4" class="text-center inputbox sellUnitField" placeholder="0 Unit" style="color: rgb(255,255,255);"></p>
+                                    <h6 class="text-center text-white" style="margin-top: -10px;">You will get&nbsp;<span id="SellFragRecive4">NaN</span> Frag</h6>
+                                    <p class="text-center" style="padding-top: 25px;"><button class="btn btn-primary sellbox" id="Sell4" type="button">Sell Units</button></p>
+                                    <p class="text-center text-danger">Sell Fee:&nbsp;<span class="text-muted" id="sellFee4">NaN+%</span></p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <p class="text-center text-danger">Production:&nbsp;<span class="text-muted" id="ProdUnit4top">NaN</span> Cookies/s</p>
+                                </div>
+                                <div class="col-xl-4 text-center">
+                                    <h5 class="text-danger" id="isLocked4">Locked</h5>
+                                </div>
+                                <div class="col">
+                                    <p class="text-center text-danger">Shares:&nbsp;<span class="text-muted" id="YourShare4" style="padding-top: 5px;padding-bottom: 5px;">NaN</span> Shares</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="fraginc_v2.min.js"></script>
+</body>
+
+</html>
